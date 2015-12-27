@@ -1,0 +1,130 @@
+.board{
+	position:relative;
+}
+
+.tile{
+	position:absolute;
+	border:1px #888888 solid;
+	border-radius:10px;
+	text-align: center;
+	font-size: 34px;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.hand .tile{
+	position:static;
+	display: inline-block;
+	margin:5px 10px;
+}
+
+.centre{
+	border-color:red;
+}
+
+.tile:hover{
+	border-color:yellow;
+}
+
+.hand .tile.k-selected{
+	box-shadow: 5px 5px 0px #888888;
+	margin: 0 15px 10px 5px;
+}
+
+.current{
+	background-color:#888888;
+}
+
+.you{
+	font-weight:bold;
+}
+
+.hand{
+	display:inline-block;
+}
+
+.dark{
+	background-color:brown;
+	color:white;
+}
+
+.light{
+	background-color:wheat;
+	color:black;
+}
+
+.ghost{
+	opacity: 0.5;
+}
+
+.game{
+	border:solid 1px white;
+	display:inline-block;
+}
+
+
+/*main css*/
+* {
+	margin:0;
+	vertical-align:top;
+}
+
+body{
+	font-family: "verdana", "helvetica", "arial", sans-serif;
+	background-color:#000000;
+	color:#cccccc;
+	padding:0 5px;
+}
+
+.winner {
+	animation: blinker 5s linear infinite;
+}
+
+@keyframes blinker {  
+	50% { opacity: 0.0; }
+}
+
+.log{
+	display:inline-block;
+}
+
+.error{
+	background-color: lightpink;
+	border-color: red;
+	color:red;
+}
+
+.info{
+	background: lightblue;
+	border-color: blue;
+	color:blue;
+}
+
+.table{
+	display:inline-block;
+}
+
+.message{
+        /*z-index: 0;*/
+	/*position: relative;*/
+	border-style:solid;
+	border-width:1px;
+	border-radius:10px;
+	padding: 0 10px;
+	display:inline-block;
+}
+
+#lobby th{
+	border:1px solid white;
+	
+}
+
+#lobby td{
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}

@@ -1,0 +1,104 @@
+Create game
+	type: 0
+	name:<50 characters>
+	hidden: [0|1] (default: 1)
+	return
+	key: <32 characters>
+	error: <int>
+Game Status
+	type: 1
+	game: <32 characters>'
+	return
+	status: <'running','notRunning','won'>
+	currentPlayer: <0-3>
+	player0: <int> (player0 score if negative then they have passed) 
+	player1: <int> (player1 score)
+	player2: <int> (player2 score)
+	player3: <int> (player3 score)
+	name: <50 characters>
+Board Size
+	type: 2
+	return
+	width: <int>
+	height: <int>
+Get Error
+	type: 3
+	error: <int>
+	return
+	message: <100 characters>
+Get Hand
+	type: 4
+	player: <32 characters>
+	return
+	hand: <10 characters> ([A-K][0-1]...)
+Get Player Number
+	type: 5
+	player: <32 characters>
+	return
+	number: <0-3>
+Get Tile At
+	type: 6
+	game: <32 characters>
+	location: <int>
+	return
+	tile: <A-K>
+	dark: <0-1>
+Join Game
+	type: 7
+	game: <32 characters>
+	name: <50 characters>
+	return
+	player: <32 characters>
+	error:	<int> (0 = success)
+Get Number Of Players
+	type: 8
+	game: <32 characters>
+	return
+	number: <0-4>
+Play
+	type: 9
+	player: <32 characters>
+	tiles:	<10 characters> ([A-K][0-1],...)
+	location: <int>
+	down:	<0-1>
+	return
+	error:	<int> (0 = success)
+Start Game
+	type: 10
+	game: <32 characters>
+	return
+	error:	<int> (0 = success)
+Get Name
+	type: 11
+	game: <32 characters>
+	player: <0-3>
+	return
+	name: <50 characters>
+Get Last
+	type: 12
+	game: <32 characters>
+	return
+	last: <int>
+
+Get Messages
+	game: <32 characters>
+	last: <int> (last message receive)
+	return
+	messages: [{
+		tiles:<10 characters> ([A-K][0-1],...),
+		location: <int>,
+		down: <0-1>,
+		score: <int>,
+		last: <int>
+	}, ...]
+	if location = -1 => game over
+	if location = -2 => player join (will only happen when game is not running)
+	if location = -3--6 game has started and current player = location + 6
+
+Get Games
+	lastGame: <int>
+	return 
+	games: [{
+			id: <int>
+			key: <32 characters>
+	},...]

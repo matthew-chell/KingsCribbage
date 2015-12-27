@@ -1,0 +1,24 @@
+<!--php
+//TODO
+//	clean up ui
+//	display button until return
+//	good keys
+//	hash player	
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>King Cribbage</title>
+<link rel='stylesheet' type='text/css' href='king.css'>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+</head>
+<body>
+<script src='king.js'></script>
+<button class='dOnStart' onclick='newGame($("#newGame").val())' disabled='disabled'>Create Game</button><input id='newGame' type='text' placeholder='Name'/>
+<button class='dOnStart' onclick='joinGame($("#joinGame").val())' disabled='disabled' >Join Game</button><input id='joinGame' type='text' placeholder='Game Key'/>
+<table id='lobby'>
+<tr><th><button class='dOnStart' onclick='checkGames();' disabled='disabled'>Refresh</button></th><th>Connect to</th><th>Status</th><th># Of Players</th></tr>
+</table>
+<div id='games'></div>
+</html>
